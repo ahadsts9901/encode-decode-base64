@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Base64 Encode and Decode Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            margin-right: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #encoded-output,
+        #decoded-output {
+            white-space: pre-wrap;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1> Encoding and Decoding </h1>
+    <label for="input-text">Input Text:</label>
+    <textarea id="input-text" rows="4" cols="50"></textarea>
+    <button onclick="encodeText()">Encode</button> <button onclick="decodeText()">Decode</button>
+    <h2>Encoded Text:</h2>
+    <div id="encoded-output"></div>
+    <h2>Decoded Text:</h2>
+    <div id="decoded-output"></div>
+
+    <!-- JavaScript  -->
+    <script>
+
+        // for encoding
+        function encodeText() {
+            const inputText = document.getElementById('input-text').value;
+            const encodedText = btoa(inputText);
+            document.getElementById('encoded-output').innerText = encodedText;
+        }
+
+        // for decoding
+        function decodeText() {
+            const encodedText = document.getElementById('encoded-output').innerText;
+            const decodedText = atob(encodedText);
+            document.getElementById('decoded-output').innerText = decodedText;
+        }
+
+    </script>
+
+</body>
+
+</html>
